@@ -3,6 +3,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Board from "./components/board/Board";
 import StoryDetails from "./components/story/StoryDetails";
+import SignIn from "./components/auth/SignIn";
+import SignUp from "./components/auth/SignUp";
 
 const App = () => {
   return (
@@ -12,6 +14,8 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Board} />
           <Route path="/project/:id" component={StoryDetails} />
+          <Route path="/signin" component={SignIn} />
+          <Route path="/signup" component={SignUp} />
         </Switch>
       </div>
     </BrowserRouter>
