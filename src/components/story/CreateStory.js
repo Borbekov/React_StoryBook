@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import createStory from "../../actions/storyActions";
 
 class CreateStory extends Component {
   state = {
@@ -13,7 +16,7 @@ class CreateStory extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    this.props.createStory(this.state);
   };
 
   render() {
@@ -42,4 +45,16 @@ class CreateStory extends Component {
   }
 }
 
-export default CreateStory;
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+    {
+      createStory
+    },
+    dispatch
+  );
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(CreateStory);
