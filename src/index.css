@@ -5,8 +5,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url(/img/back.jpeg) repeat;
+  background-size: 100%;
 }
-
+form {
+  padding: 20px;
+  margin-top: 60px;
+}
+form button, form h5{
+  margin: 20px 0;
+}
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]){
+  border-color: red;
+  box-shadow: none;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

@@ -5,7 +5,7 @@ const SignedInLink = () => {
   return (
     <ul className="right hide-on-med-and-down">
       <li>
-        <NavLink to="/">New Story</NavLink>
+        <NavLink to="/create">New Story</NavLink>
       </li>
       <li>
         <NavLink to="/">Log Out</NavLink>
