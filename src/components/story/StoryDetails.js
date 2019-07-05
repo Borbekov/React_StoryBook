@@ -4,9 +4,9 @@ const StoryDetails = props => {
   const id = props.match.params.id;
   return (
     <div className="container">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Card Title - {id}</span>
+      <div className="card blue-grey darken-1">
+        <div className="card-content white-text">
+          <span className="card-title">Card Title - {id}</span>
           <p>
             lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
             lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem

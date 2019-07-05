@@ -1,32 +1,11 @@
 import React from "react";
 import StorySummary from "./StorySummary";
 
-const StoriesList = () => {
+const StoriesList = ({ stories }) => {
   return (
     <div className="scroll-div">
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
-      <StorySummary />
+      {stories &&
+        stories.map(story => <StorySummary story={story} key={story.id} />)}
     </div>
   );
 };

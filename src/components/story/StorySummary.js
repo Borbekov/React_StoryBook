@@ -1,12 +1,12 @@
 import React from "react";
 
-const StorySummary = () => {
+const StorySummary = ({ story }) => {
   return (
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text">
-        <span class="card-title">Card Title</span>
+    <div className="card blue-grey darken-1">
+      <div className="card-content white-text">
+        <span className="card-title">{story.title}</span>
         <p>Posted by Borbekov Bekzhan</p>
-        <p class="grey-text">20.10.1997</p>
+        <p className="grey-text">20.10.1997</p>
       </div>
     </div>
   );
