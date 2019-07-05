@@ -3,7 +3,22 @@ import StorySummary from "./StorySummary";
 
 const StoriesList = () => {
   return (
-    <div>
+    <div className="scroll-div">
+      <StorySummary />
+      <StorySummary />
+      <StorySummary />
+      <StorySummary />
+      <StorySummary />
+      <StorySummary />
+      <StorySummary />
+      <StorySummary />
+      <StorySummary />
+      <StorySummary />
+      <StorySummary />
+      <StorySummary />
+      <StorySummary />
+      <StorySummary />
+      <StorySummary />
       <StorySummary />
       <StorySummary />
       <StorySummary />
