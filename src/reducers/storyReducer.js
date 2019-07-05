@@ -7,6 +7,10 @@ const initState = {
 };
 
 const storyReducer = (state = initState, action) => {
+  switch (action.type) {
+    case "CREATE_STORY":
+      console.log("STORY ", action.payload);
+  }
   return state;
 };
 
