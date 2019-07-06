@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Notification from "./Notification";
 import StoriesList from "../story/StoriesList";
 import { connect } from "react-redux";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
 
 class Board extends Component {
   render() {
@@ -23,8 +25,11 @@ class Board extends Component {
 
 const mapStateToProps = state => {
   return {
-    stories: state.story.stories
+    stories: state.firestore.ordered.stories
   };
 };
 
-export default connect(mapStateToProps)(Board);
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([{ collection: "stories" }])
+)(Board);
