@@ -10,8 +10,13 @@ const storyReducer = (state = initState, action) => {
   switch (action.type) {
     case "CREATE_STORY":
       console.log("STORY ", action.payload);
+      return state;
+    case "CREATE_STORY_ERROR":
+      console.log("Error create ", action.payload);
+      return state;
+    default:
+      return state;
   }
-  return state;
 };
 
 export default storyReducer;
