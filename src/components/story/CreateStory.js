@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import createStory from "../../actions/storyActions";
+import { Redirect } from "react-router-dom";
 
 class CreateStory extends Component {
   state = {
@@ -20,6 +21,10 @@ class CreateStory extends Component {
   };
 
   render() {
+    const { auth } = this.props;
+    if (!auth.uid) {
+      return <Redirect to="/signin" />;
+    }
     return (
       <div className="container">
         <form onSubmit={this.handleSubmit} className="white">
@@ -45,6 +50,12 @@ class CreateStory extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    auth: state.firebase.auth
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
     {
@@ -55,6 +66,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(CreateStory);
