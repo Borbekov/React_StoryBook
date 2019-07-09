@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import signIn from "../../actions/authActions";
+import { signIn } from "../../actions/authActions";
 
 class SignIn extends Component {
   state = {

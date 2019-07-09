@@ -1,7 +1,6 @@
-const signIn = logging => {
+export const signIn = logging => {
   return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
-
     firebase
       .auth()
       .signInWithEmailAndPassword(logging.email, logging.password)
@@ -19,4 +18,16 @@ const signIn = logging => {
   };
 };
 
-export default signIn;
+export const signOut = () => {
+  return (dispatch, getState, { getFirebase }) => {
+    const firebase = getFirebase();
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        dispatch({
+          type: "SIGNOUT_SUCCESS"
+        });
+      });
+  };
+};
