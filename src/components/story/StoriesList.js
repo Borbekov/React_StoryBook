@@ -7,8 +7,8 @@ const StoriesList = ({ stories }) => {
     <div className="scroll-div">
       {stories &&
         stories.map(story => (
-          <Link to={"/story/" + story.id}>
-            <StorySummary story={story} key={story.id} />
+          <Link to={"/story/" + story.id} key={story.id}>
+            <StorySummary story={story} />
           </Link>
         ))}
     </div>
