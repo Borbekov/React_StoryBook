@@ -1,14 +1,15 @@
 const createStory = story => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
-    //make async call ot database
     const firestore = getFirestore();
+    const profile = getState().firebase.profile;
+    const id = getState().firebase.auth.uid;
     firestore
       .collection("stories")
       .add({
         ...story,
-        firstName: "Bekzhan",
-        secondName: "Borbekov",
-        authorId: 1234,
+        firstName: profile.firstName,
+        secondName: profile.secondName,
+        authorId: id,
         createdAt: new Date()
       })
       .then(() => {
