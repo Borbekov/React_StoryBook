@@ -9,6 +9,10 @@ body {
   background-size: 100%;
   overflow: hidden;
 }
+.mobile-msg{
+  background-color: #FFF;
+  padding: 50px 10px;
+}
 form {
   padding: 20px;
   margin-top: 60px;
@@ -20,13 +24,33 @@ input[type=text]:not(.browser-default):focus:not([readonly]),
 input[type=email]:not(.browser-default):focus:not([readonly]),
 input[type=password]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]){
-  border-color: red;
+  border-color: #EF5350;
   box-shadow: none;
+}
+input[type=text],
+input[type=email],
+input[type=password]{
+  color: #FFF;
+}
+.input-field input:focus{
+  color: "yellow";
+}
+.input-field .prefix.active {
+  color: #EF5350;
+}
+.input-field {
+  color: #FFF;
+}
+.input-field label {
+  color: #FFF;
+}
+.materialize-textarea{
+  color: #FFF;
 }
 .scroll-div{
   overflow-y: scroll;
   height: 100vh;
-
+  padding-bottom: 10vh;
 }
 .scroll-div::-webkit-scrollbar { /* WebKit */
     width: 0;
