@@ -6,7 +6,7 @@ import { signOut } from "../../actions/authActions";
 
 const SignedInLink = props => {
   return (
-    <ul className="right hide-on-med-and-down">
+    <ul className="right">
       <li>
         <NavLink to="/create">New Story</NavLink>
       </li>
@@ -14,8 +14,8 @@ const SignedInLink = props => {
         <a onClick={() => props.signOut()}>Log Out</a>
       </li>
       <li>
-        <NavLink to="/" className="btn btn-floating grey">
-          {props.initials}
+        <NavLink to="/" className="btn btn-floating blue-grey z-depth-0">
+          <div className="white-text">{props.initials}</div>
         </NavLink>
       </li>
     </ul>

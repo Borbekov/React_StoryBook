@@ -8,6 +8,19 @@ import SignUp from "./components/auth/SignUp";
 import CreateStory from "./components/story/CreateStory";
 
 const App = () => {
+  if (window.innerWidth < 995 && window.innerHeight < 591) {
+    return (
+      <div className="mobile-msg">
+        <div
+          className="container center red-text"
+          style={{ marginTop: "15px" }}
+        >
+          This web app is not fully adaptive. Please, open with laptop, tablet
+          (landscape mode) or PC.
+        </div>
+      </div>
+    );
+  }
   return (
     <BrowserRouter>
       <div>

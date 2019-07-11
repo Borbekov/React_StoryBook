@@ -28,8 +28,8 @@ class CreateStory extends Component {
     }
     return (
       <div className="container">
-        <form onSubmit={this.handleSubmit} className="white">
-          <h5 className="grey-text text-darken-3">Create Story</h5>
+        <form onSubmit={this.handleSubmit}>
+          <h5 className="white-text">Create Story</h5>
           <div className="input-field">
             <label htmlFor="title">Title</label>
             <input type="text" id="title" onChange={this.handleChange} />
@@ -43,7 +43,7 @@ class CreateStory extends Component {
             />
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Create</button>
+            <button className="btn red lighten-1">Create</button>
           </div>
         </form>
       </div>

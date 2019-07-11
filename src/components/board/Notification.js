@@ -3,23 +3,21 @@ import moment from "moment";
 
 const Notification = ({ notifications }) => {
   return (
-    <div className="section">
-      <div className="card">
-        <div className="card-content">
-          <span className="card-title">Notifications</span>
-          <ul className="notifications">
-            {notifications &&
-              notifications.map(notification => (
-                <li key={notification.id}>
-                  <span className="pink-text">{notification.user} </span>
-                  <span>{notification.content}</span>
-                  <div className="grey-text">
-                    {moment(notification.time.toDate()).fromNow()}
-                  </div>
-                </li>
-              ))}
-          </ul>
-        </div>
+    <div className="card blue-grey darken-1">
+      <div className="card-content white-text">
+        <span className="card-title">Notifications</span>
+        <ul>
+          {notifications &&
+            notifications.map(notification => (
+              <li key={notification.id}>
+                <span className="yellow-text">{notification.user} </span>
+                <span>{notification.content}</span>
+                <p className="grey-text">
+                  {moment(notification.time.toDate()).fromNow()}
+                </p>
+              </li>
+            ))}
+        </ul>
       </div>
     </div>
   );

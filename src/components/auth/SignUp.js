@@ -29,8 +29,8 @@ class SignUp extends Component {
     }
     return (
       <div className="container">
-        <form onSubmit={this.handleSubmit} className="white">
-          <h5 className="grey-text text-darken-3">Sign Up</h5>
+        <form onSubmit={this.handleSubmit}>
+          <h5 className="white-text">Sign Up</h5>
           <div className="input-field">
             <i className="material-icons prefix">email</i>
             <label htmlFor="email">Email</label>
@@ -38,8 +38,8 @@ class SignUp extends Component {
           </div>
           <div className="input-field">
             <i className="material-icons prefix">lock</i>
-            <input type="password" id="password" onChange={this.handleChange} />
             <label htmlFor="password">Password</label>
+            <input type="password" id="password" onChange={this.handleChange} />
           </div>
           <div className="input-field">
             <i className="material-icons prefix">account_circle</i>
@@ -52,7 +52,7 @@ class SignUp extends Component {
             <input type="text" id="secondName" onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Sign Up</button>
+            <button className="btn red lighten-1">Sign Up</button>
             {authError && <div className="red-text center">{authError}</div>}
           </div>
         </form>
