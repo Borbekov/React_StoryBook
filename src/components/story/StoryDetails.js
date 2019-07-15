@@ -1,12 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
-import { compose } from "redux";
+import { compose, bindActionCreators } from "redux";
 import { Redirect } from "react-router-dom";
 import moment from "moment";
+import { putLike } from "../../actions/storyActions";
 
 const StoryDetails = props => {
-  const { story, auth } = props;
+  const { story, auth, putLike, match } = props;
   if (!auth.uid) {
     return <Redirect to="/signin" />;
   }
@@ -22,6 +23,15 @@ const StoryDetails = props => {
           <div className="card-action white-text">
             <div>
               Posted by {story.firstName} {story.secondName}
+            </div>
+            <div className="right">
+              <i
+                className="material-icons"
+                onClick={() => putLike(match.params.id)}
+              >
+                favorite
+              </i>
+              {story.likes.length}
             </div>
             <div>{moment(story.createdAt.toDate()).calendar()}</div>
           </div>
@@ -47,7 +57,19 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+    {
+      putLike
+    },
+    dispatch
+  );
+};
+
 export default compose(
-  connect(mapStateToProps),
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  ),
   firestoreConnect([{ collection: "stories" }])
 )(StoryDetails);
