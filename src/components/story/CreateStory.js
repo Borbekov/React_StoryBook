@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import createStory from "../../actions/storyActions";
+import { createStory } from "../../actions/storyActions";
 import { Redirect } from "react-router-dom";
 
 class CreateStory extends Component {

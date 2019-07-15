@@ -56,6 +56,9 @@ input[type=password]{
     width: 0;
     height: 0;
 }
+/* .likeAmmount{
+  margin-left: 50px;
+} */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

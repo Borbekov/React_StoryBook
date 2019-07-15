@@ -1,4 +1,4 @@
-const createStory = story => {
+export const createStory = story => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
     const profile = getState().firebase.profile;
@@ -10,7 +10,8 @@ const createStory = story => {
         firstName: profile.firstName,
         secondName: profile.secondName,
         authorId: id,
-        createdAt: new Date()
+        createdAt: new Date(),
+        likes: []
       })
       .then(() => {
         dispatch({
@@ -27,4 +28,14 @@ const createStory = story => {
   };
 };
 
-export default createStory;
+export const putLike = id => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firebase = getFirebase();
+    const firestore = getFirestore();
+    const uid = getState().firebase.auth.uid;
+    firestore
+      .collection("stories")
+      .doc(id)
+      .update({ likes: firebase.firestore.FieldValue.arrayUnion(uid) });
+  };
+};
