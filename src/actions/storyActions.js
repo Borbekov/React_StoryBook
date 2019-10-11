@@ -39,3 +39,8 @@ export const putLike = id => {
       .update({ likes: firebase.firestore.FieldValue.arrayUnion(uid) });
   };
 };
+
+export const asd = () => {
+  const a = "BEKZHAN"
+  return a;
+}
